@@ -71,16 +71,15 @@ Body Section
 					<c:forEach var="item" items="${ products }" varStatus="loop">
 						<li class="span4">
 							<div class="thumbnail">
-								<a class="zoomTool" href="<c:url value="/detail/${ item.id }"/>"
+								<a class="zoomTool" href="<c:url value="/detail/${ item.id_pr }"/>"
 									title="Chi tiết sản phẩm"><span class="icon-search"></span> Chi Tiết 
-									</a> <a href="detail/${item.id }"><img
+									</a> <a href="detail/${item.id_pr }"><img
 									src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>  
 								<div class="caption">
 									<h5>${ item.name }</h5>
 									<h4>
-										<a class="defaultBtn" href="product_details.html"
-											title="Click to view"><span class="icon-zoom-in"></span></a>
-										<a class="shopBtn" href="<c:url value="/AddCart/${ item.id }"/>" title="thêm vào giỏ hàng"><span
+										
+										<a class="shopBtn" href="<c:url value="/AddCart/${ item.id_pr }"/>" title="thêm vào giỏ hàng"><span
 											class="icon-plus"></span></a> <span class="pull-right"> <fmt:formatNumber type="number" groupingUsed="true" value="${item.price}" />đ</span>
 									</h4>
 								</div>

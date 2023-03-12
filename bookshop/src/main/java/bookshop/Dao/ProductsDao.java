@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +22,7 @@ public class ProductsDao extends BaseDao{
 	private StringBuffer SqlString() {
 		StringBuffer  sql = new StringBuffer();
 		sql.append("SELECT ");
-		sql.append("p.id AS id ");
+		sql.append("p.id AS id_pr ");
 		sql.append(", p.id_category ");
 		sql.append(", p.name ");
 		sql.append(", p.price ");
@@ -99,6 +100,7 @@ public class ProductsDao extends BaseDao{
 		return listProduct;
 	}
 	
+
 	public ProductsDto FindProductByID(long id) {
 		String sql = SqlProductByID(id);
 		ProductsDto product = _jdbcTemplate.queryForObject(sql, new ProductsDtoMapper());
@@ -111,17 +113,17 @@ public class ProductsDao extends BaseDao{
 	}
 	
 	public void saveOrUpdate(ProductsDto product) {
-		if (product.getid() > 0) {
+		if (product.getId_pr() > 0) {
 			// update
 			String sql = "UPDATE products SET id_category=?, name=?, price=?,img=? , description=?, highlight=? ,details=?"
 					+ " WHERE id=?";
 			_jdbcTemplate.update(sql, product.getId_category(), product.getName(), product.getPrice(),
-					product.getImg(), product.getDescription(), product.getHighlight(), product.getDetails(), product.getid());
+					product.getImg(), product.getDescription(), product.getHighlight(), product.getDetails(), product.getId_pr());
 		} else {
 			// insert
 			String sql = "INSERT INTO products (id, id_category, name, price,img,description,highlight,details)"
 					+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-			_jdbcTemplate.update(sql, product.getid(), product.getId_category(), product.getName(),
+			_jdbcTemplate.update(sql, product.getId_pr(), product.getId_category(), product.getName(),
 					product.getPrice(), product.getImg(), product.getDescription(), product.getHighlight(), product.getDetails());
 		}
 
@@ -133,7 +135,7 @@ public class ProductsDao extends BaseDao{
 			public ProductsDto extractData(ResultSet rs) throws SQLException, DataAccessException {
 				if (rs.next()) {
 				ProductsDto products = new ProductsDto();
-				products.setid(rs.getLong("id"));
+				products.setId_pr(rs.getLong("id"));
 				products.setId_category(rs.getInt("id_category"));
 				products.setName(rs.getString("name"));
 				products.setPrice(rs.getDouble("price"));

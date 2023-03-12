@@ -14,9 +14,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Bootstrap styles -->
-<link href="<c:url value="/assets/user/css/bootstrap.css"/> "rel="stylesheet" />
+<link href="<c:url value="/assets/user/css/bootstraps.css"/> "rel="stylesheet" />
 <!-- Customize styles -->
-<link href="<c:url value="/assets/user/style.css"/>" rel="stylesheet" />
+<link href="<c:url value="/assets/user/styles.css"/>" rel="stylesheet" />
 <!-- font awesome styles -->
 <link href="<c:url value="/assets/user/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
 <link rel="shortcut icon" href="<c:url value="/assets/user/ico/favicon.ico"/>">

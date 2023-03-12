@@ -15,6 +15,7 @@
 <!-- 
 Body Section 
 -->
+
 <h1>${Cart.size() }</h1>
 	<div class="row product-content">
 
@@ -42,7 +43,7 @@ Body Section
 				<h3>${ product.name }</h3>
 				<hr class="soft"/>
 				
-				<form class="form-horizontal qtyFrm" method="get" action="<c:url value="/AddCart/${ product.id }"/>">
+				<form class="form-horizontal qtyFrm" method="get" action="<c:url value="/AddCart/${product.id_pr}"/>">
 				  <div class="control-group">
 					<label class="control-label"><span><fmt:formatNumber type="number" groupingUsed="true" value="${product.price}" />đ</span></label>
 					<div class="controls">
@@ -54,7 +55,7 @@ Body Section
 		
 				  <h4></h4>
 				  <p>${product.description }<p>
-				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Thêm vào giỏ hàng</button>
+				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Thêm vào giỏ</button>
 				</form>
 			</div>
 			</div>

@@ -20,15 +20,16 @@ public class CartController extends BaseController{
 	private CartServiceImpl cartService = new CartServiceImpl();
 	
 	@RequestMapping(value= "AddCart/{id}")
-	public String AddCart(HttpServletRequest request,HttpSession session, @PathVariable long id) {
+	public String AddCart(HttpSession session, @PathVariable long id) {
 		HashMap<Long, CartDto> cart = (HashMap<Long, CartDto>)session.getAttribute("Cart");
 		if(cart == null) {
 			cart = new HashMap<Long, CartDto>();
 		}
 		cart = cartService.AddCart(id, cart);
+		
 		session.setAttribute("Cart", cart);
-		session.setAttribute("TotalQuantyCart", cartService.TotalQuanty(cart));
-		session.setAttribute("TotalPriceCart", cartService.TotalPrice(cart));
+		//session.setAttribute("TotalQuantyCart", cartService.TotalQuanty(cart));
+		//session.setAttribute("TotalPriceCart", cartService.TotalPrice(cart));
 		return "redirect:/detail/"+id;
 	}
 }

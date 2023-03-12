@@ -22,7 +22,7 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail">Email</label>
 				<div class="controls">
-				    <form:input type="email" class="span3" placeholder="Email" path="user" /> 
+				  <form:input type="email" class="span3" placeholder="Email" path="user" />  
 				</div>
 			  </div>
 			  <div class="control-group">

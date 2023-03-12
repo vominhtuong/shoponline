@@ -3,7 +3,7 @@ package bookshop.Dto;
 import java.sql.Date;
 
 public class ProductsDto {
-	private long id;
+	private long id_pr;
 	private int id_category;
 	private String name;
 	private double price;
@@ -18,12 +18,12 @@ public class ProductsDto {
 		super();
 	}
 
-	public long getid() {
-		return id;
+	public long getId_pr() {
+		return id_pr;
 	}
 
-	public void setid(long id) {
-		this.id = id;
+	public void setId_pr(long id_pr) {
+		this.id_pr = id_pr;
 	}
 
 	public int getId_category() {

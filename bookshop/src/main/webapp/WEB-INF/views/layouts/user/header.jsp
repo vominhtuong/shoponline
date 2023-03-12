@@ -34,7 +34,7 @@ Navigation Bar Section
 				<form action="#" class="navbar-search pull-left">
 					<input type="text" placeholder="Tìm kiếm" class="search-query span2">
 				</form>
-				<ul class="nav pull-right">
+				<!--<ul class="nav pull-right">
 				<c:if test="${empty LoginInfo }">
 					<li class="dropdown"><a data-toggle="dropdown"
 						class="dropdown-toggle" href="#"><span class="icon-lock"></span>
@@ -44,7 +44,7 @@ Navigation Bar Section
 						<c:if test="${not empty LoginInfo }">
 							<li><a href="#">${LoginInfo.display_name } <b class="caret"></b></a></li>
 						</c:if>
-				</ul>
+				</ul>-->
 			</div>
 		</div>
 	</div>

@@ -39,8 +39,6 @@ public class UserController extends BaseController {
 		return _mvShare;
 	}
 	
-	
-	
 
 	@RequestMapping(value= "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView DangNhap() {
@@ -54,13 +52,14 @@ public class UserController extends BaseController {
 	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
 		if(user != null){
-			if(user.getRules().equals("admin")) {
+			/*if(user.getRules().equals("admin")) {
 				_mvShare.setViewName("admin/transfer");
 				session.setAttribute("LoginInfo", user);
-			}else {			
+			}
+			else {*/			
 			_mvShare.setViewName("redirect:home");
 			session.setAttribute("LoginInfo", user);
-			}
+			//}
 		}
 		else {
 			_mvShare.addObject("statusLogin", "Đăng nhập thất bại!");	

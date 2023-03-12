@@ -18,7 +18,7 @@ public class CartDao extends BaseDao{
 		if(product != null && cart.containsKey(id)) {
 			itemCart = cart.get(id);
 			itemCart.setQuanty(itemCart.getQuanty() + 1);
-			itemCart.setTotalPrice(itemCart.getQuanty() * itemCart.getProduct().getPrice());
+			//itemCart.setTotalPrice(itemCart.getQuanty() * itemCart.getProduct().getPrice());
 		}
 		else {
 			itemCart.setProduct(product);

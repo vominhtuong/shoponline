@@ -48,9 +48,9 @@
 						<li class="span4">
 							<div class="thumbnail">
 								<a href="product_details.html" class="overlay"></a> <a
-									class="zoomTool" href="<c:url value="/detail/${ item.id }"/>"
+									class="zoomTool" href="<c:url value="/detail/${ item.id_pr }"/>"
 									title="Chi tiết sản phẩm"><span class="icon-search"></span> Chi 
-									Tiết</a> <a href="<c:url value="/detail/${ item.id }"/>"><img
+									Tiết</a> <a href="<c:url value="/detail/${ item.id_pr }"/>"><img
 									src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>
 								<div class="caption cntr">
 									<p>${ item.name }</p>
@@ -59,8 +59,7 @@
 												groupingUsed="true" value="${item.price}" />đ</strong>
 									</p>
 									<h4>
-										<a class="shopBtn" href="#" title="add to cart"> Thêm vào
-											giỏ hàng </a>
+										<a class="shopBtn" href="#" title="add to cart"> Thêm vào giỏ hàng </a>
 									</h4>
 									<br class="clr">
 								</div>
